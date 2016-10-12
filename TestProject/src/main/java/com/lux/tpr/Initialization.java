@@ -14,7 +14,7 @@ public class Initialization {
     public void launchBrowser() {
 
         //driver = new FirefoxDriver();
-        System.setProperty("webdriver.chrome.driver",PropertyHolder.getProperty("webdriverPath_chrome"));
+        System.setProperty("webdriver.chrome.driver",PropertyHolder.getProperty("webdriverPath"));
         driver = new ChromeDriver();
 
     }
