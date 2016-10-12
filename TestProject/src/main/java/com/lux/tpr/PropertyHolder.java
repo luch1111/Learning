@@ -14,7 +14,7 @@ public class PropertyHolder {
     static {
         InputStream stream = null;
         try {
-            stream = new FileInputStream("C:\\Work\\IdeaProjects\\rm.properties");
+            stream = new FileInputStream("/home/konstantin/desktop/work/rm.properties");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
