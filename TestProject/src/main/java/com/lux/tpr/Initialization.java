@@ -19,7 +19,11 @@ public class Initialization {
     public void launchBrowser() throws MalformedURLException {
 
         if (PropertyHolder.getProperty("seleniumServer").equals("on")) {
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.chrome());
+            if (PropertyHolder.getProperty("browser").equals("chrome")) {
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.chrome());
+            } else if (PropertyHolder.getProperty("browser").equals("IE")) {
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.internetExplorer());
+            }
         } else {
             System.setProperty("webdriver.chrome.driver",PropertyHolder.getProperty("webdriverPath"));
             driver = new ChromeDriver();
